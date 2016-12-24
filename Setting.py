@@ -11,7 +11,7 @@ User_Name = u''
 # 密码
 Password = u''
 # 超时时间
-Time_Out = 3
+Time_Out = 60
 # MNNU Contests页面
 Contest_List_Url = MNNU_Url + u'/index.php/Contest/lists/s/all/p/'
 # # 搜索页面前缀
