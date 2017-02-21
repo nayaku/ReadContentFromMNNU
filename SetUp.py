@@ -2,13 +2,14 @@
 
 import Setting
 import sys
-
+import os
 
 def run():
-    print u"***********************************************"
-    print u"Contest 提交代码批量获取工具。"
-    print u"                          版本：1.02 "
-    print u"***********************************************"
+    print u"*******************************************************"
+    print u"         Contest 提交代码批量获取工具。"
+    print u"                                            版本：1.03"
+    print u"                                           --- BY 雪靡"
+    print u"*******************************************************"
 
     while Setting.User_Name == u'':
         print u"请输入用户名："
@@ -34,5 +35,7 @@ def run():
     text = sys.stdin.readline().strip()
     if not text == u'':
         Setting.Path = text
+        if not os.path.isdir(text):
+            os.makedirs(text)
 
 # run()
