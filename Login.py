@@ -12,3 +12,4 @@ class Login:
         loginparams = {"username": Setting.User_Name, "password": Setting.Password}
         request_url = 'http://acm.mnnu.edu.cn/User/chklogin.htm'
         NetWork.NetWork.post(loginparams, request_url)
+

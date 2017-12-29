@@ -1,20 +1,17 @@
 # -*- coding:utf-8 -*-
 
-import urllib2
-import urllib
-import cookielib
+
 import re
 import NetWork
 import Setting
 import Problem
 import os
-import sys
-import codecs
+
 
 
 class Contest:
     # Contest类
-    def __init__(self, title = u'', url = u''):
+    def __init__(self, title=u'', url=u''):
         self.title = title
         # self.title = title.decode('utf-8')  # 标题
         self.url = Setting.MNNU_Url + url  # url链接
@@ -22,7 +19,7 @@ class Contest:
 
     def post(self):
         # post 登入
-        params = {"cpassword": 'mnnu'}
+        params = {"cpassword": Setting.Contest_PassWord}
         request_url = self.url.replace("explain", "authprocess")
         NetWork.NetWork.post(params, request_url)
 
@@ -37,8 +34,12 @@ class Contest:
         print self.title
         title = self.title.replace(u'—', u'')
         print title
+        title = title.replace(u'\\', u'、').replace(u'/', u'、').replace(u':', u'：').replace(u'*', u' ').replace(u'"', u'\'') \
+            .replace(u'?', u'？').replace(u'<', u'《').replace(u'>', u'》').replace(u'|', u'、')
         title = title.encode("gb2312")
+
         path = Setting.Path + "\\" + title
+        print path
         if not os.path.exists(path):
             os.mkdir(path)
 

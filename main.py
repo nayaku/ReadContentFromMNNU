@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import sys
 
 import Login
 import ContestList
@@ -16,3 +17,5 @@ if __name__ == '__main__':
     for contest in contests:
         contest.post()
         contest.fetch_problem()
+    print u'请输入任意按键结束程序。'
+    sys.stdin.readline()

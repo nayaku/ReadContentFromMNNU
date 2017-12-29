@@ -4,7 +4,6 @@ import NetWork
 import Setting
 import re
 import Contest
-import urllib2
 
 
 class ContestList:
